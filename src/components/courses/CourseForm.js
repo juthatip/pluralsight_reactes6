@@ -1,4 +1,6 @@
 import React from 'react'
+import TextInput from '../common/TextInput'
+import SelectInput from '../common/SelectInput'
 
 const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors }) => {
   return (
@@ -17,21 +19,21 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors }) =>
         value={course.authorId}
         defaultOption="Select Author"
         options={allAuthors}
-        onChange={onChange} error={error.authorId} />
+        onChange={onChange} error={errors.authorId} />
 
       <TextInput
         name="category"
         label="Category"
         value={course.category}
         onChange={onChange}
-        error={error.category} />
+        error={errors.category} />
 
       <TextInput
         name="length"
         label="Length"
         value={course.length}
         onChange={onChange}
-        error={error.length} />
+        error={errors.length} />
 
       <input
         type="submit"
